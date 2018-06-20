@@ -4,15 +4,16 @@
 import random
 import sys
 
-chars1 = ["|","-","_","=","/","\\","#"," "]
+chars1 = ["#","|","-","_","=","/","\\"," "]
 chars2 = ["(",")","{","}","[","]"]
 chars3 = ["|","_"," "]
 chars6 = ["ᚐ","ᚑ","ᚒ","ᚓ","ᚔ"]
 chars7 = ["ᚋ","ᚌ","ᚍ","ᚎ","ᚏ"]
 chars8 = ["▖","▗","▘","▙","▚","▛","▜","▝","▞","▟"]
+chars9 = ["⋮","⋰","⋱"]
 
 if len(sys.argv) < 2:
-    sys.argv = ['pyart.py',random.randrange(0, 9)]
+    sys.argv = ['pyart.py',random.randrange(0, 10)]
 
 sys.argv[1] = int(sys.argv[1])
 
@@ -30,6 +31,8 @@ elif sys.argv[1] == 7:
     chars = chars7
 elif sys.argv[1] == 8:
     chars = chars8
+elif sys.argv[1] == 9:
+    chars = chars9
 else:
     chars = chars3
 
