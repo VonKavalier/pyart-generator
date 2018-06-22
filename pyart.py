@@ -7,30 +7,23 @@ import sys
 chars1 = ["#","|","-","_","=","/","\\"," "]
 chars2 = ["(",")","{","}","[","]"]
 chars3 = ["|","_"," "]
-chars6 = ["ᚐ","ᚑ","ᚒ","ᚓ","ᚔ"]
-chars8 = ["▖","▗","▘","▙","▚","▛","▜","▝","▞","▟"]
-chars9 = ["⋮","⋰","⋱"]
+chars4 = ["ᚐ","ᚑ","ᚒ","ᚓ","ᚔ"]
+chars5 = ["▖","▗","▘","▙","▚","▛","▜","▝","▞","▟"]
+chars6 = ["⋮","⋰","⋱"]
+chars7 = ["-",".", " "]
+
+chars = [chars1, chars2, chars3, chars4, chars5, chars6, chars7]
 
 if len(sys.argv) < 2:
-    sys.argv = ['pyart.py',random.randrange(0, 7)]
+    sys.argv = ['pyart.py',random.randrange(1, len(chars)+1)]
 
-sys.argv[1] = int(sys.argv[1])
+while int(sys.argv[1])>len(chars):
+    sys.argv[1] = int(input("Entrez un chiffre entre 1 et " + str(len(chars)) + "\n"))
 
-if sys.argv[1] == 1:
-    chars = chars1
-elif sys.argv[1] == 2:
-    chars = chars2
-elif sys.argv[1] == 6:
-    chars = chars6
-elif sys.argv[1] == 8:
-    chars = chars8
-elif sys.argv[1] == 9:
-    chars = chars9
-else:
-    chars = chars3
+chars_choice = int(sys.argv[1])-1
 
 for i in range(25):
     row = ""
     for j in range(50):
-        row += chars[random.randrange(0,len(chars))]
+        row += chars[chars_choice][random.randrange(0,len(chars[chars_choice]))]
     print(row)
