@@ -4,26 +4,26 @@
 import random
 import sys
 
-chars1 = ["#","|","-","_","=","/","\\"," "]
-chars2 = ["(",")","{","}","[","]"]
-chars3 = ["|","_"," "]
-chars4 = ["ᚐ","ᚑ","ᚒ","ᚓ","ᚔ"]
-chars5 = ["▖","▗","▘","▙","▚","▛","▜","▝","▞","▟"]
-chars6 = ["⋮","⋰","⋱"]
-chars7 = ["-",".", " "]
+set1 = ["#","|","-","_","=","/","\\"," "]
+set2 = ["(",")","{","}","[","]"]
+set3 = ["|","_"," "]
+set4 = ["ᚐ","ᚑ","ᚒ","ᚓ","ᚔ"]
+set5 = ["▖","▗","▘","▙","▚","▛","▜","▝","▞","▟"]
+set6 = ["⋮","⋰","⋱"]
+set7 = ["-",".", " "]
 
-chars = [chars1, chars2, chars3, chars4, chars5, chars6, chars7]
+sets = [set1, set2, set3, set4, set5, set6, set7]
 
 if len(sys.argv) < 2:
-    sys.argv = ['pyart.py',random.randrange(1, len(chars)+1)]
+    sys.argv = ['pyart.py',random.randrange(1, len(sets)+1)]
 
-while int(sys.argv[1])>len(chars):
-    sys.argv[1] = int(input("Entrez un chiffre entre 1 et " + str(len(chars)) + "\n"))
+while int(sys.argv[1])>len(sets):
+    sys.argv[1] = int(input("Entrez un chiffre entre 1 et " + str(len(sets)) + "\n"))
 
-chars_choice = int(sys.argv[1])-1
+set_choice = int(sys.argv[1])-1
 
 for i in range(25):
     row = ""
     for j in range(50):
-        row += chars[chars_choice][random.randrange(0,len(chars[chars_choice]))]
+        row += sets[set_choice][random.randrange(0,len(sets[set_choice]))]
     print(row)
