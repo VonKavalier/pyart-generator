@@ -24,4 +24,4 @@ If the number is higher than the number of sets, you'll be asked to choose anoth
 ## Now what ?
 
 Do whatever you want with that script, reuse, rewrite and so on.
-You can also create new sets and make a pull request that'll review :)
+You can also create new sets and make a pull request that I'll review :)
